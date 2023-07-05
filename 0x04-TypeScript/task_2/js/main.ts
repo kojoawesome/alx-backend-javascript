@@ -1,24 +1,16 @@
-export const cpp: Subjects.Cpp = new Subjects.Cpp();
-export const java: Subjects.Java = new Subjects.Java();
-export const react: Subjects.React = new Subjects.React();
-export const cTeacher: Subjects.Teacher = {
-  firstName: 'Dennis',
-  lastName: 'Ritchie',
-  experienceTeachingC: 10,
-};
+export interface MajorCredits {
+  credits: number & { __brand: 'MajorCredits.credits' };
+}
 
-console.log('C++');
-cpp.setTeacher = cTeacher;
-console.log(cpp.getRequirements());
-console.log(cpp.getAvailableTeacher());
+export interface MinorCredits {
+  credits: number & { __brand: 'MinorCredits.credits' };
+}
 
-console.log('Java');
-java.setTeacher = cTeacher;
-console.log(java.getRequirements());
-console.log(java.getAvailableTeacher());
+export function sumMajorCredits(subject1: MajorCredits, subject2: MajorCredits): MajorCredits {
+  return { credits: subject1.credits + subject2.credits } as MajorCredits;
+}
 
-console.log('React');
-react.setTeacher = cTeacher;
-console.log(react.getRequirements());
-console.log(react.getAvailableTeacher());
+export function sumMinorCredits(subject1: MinorCredits, subject2: MinorCredits): MinorCredits {
+  return { credits: subject1.credits + subject2.credits } as MinorCredits;
+}
 
