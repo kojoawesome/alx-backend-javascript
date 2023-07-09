@@ -1,4 +1,5 @@
-etrieves students in a given location.
+/**
+ * Retrieves students in a given location.
  * @param {{
  *   id: Number,
  *   firstName: String,
