@@ -85,4 +85,3 @@ const styleSheetElement = document.createElement('style');
 styleSheetElement.innerHTML = styleSheet;
 document.head.insertAdjacentElement('beforeend', styleSheetElement);
 document.title = 'Task 0';
-
